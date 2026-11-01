@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ws_01",
+    "title": "कार्यपत्रिका 1: शब्द मिलाओ (Match Words)",
+    "title_olchiki": "ᱠᱟᱹᱢᱤ ᱥᱟᱠᱟᱢ ᱑ : ᱟᱹᱲᱟᱹ ᱢᱤᱞᱟᱹᱣ",
+    "description": "बाईं ओर दिए गए हिंदी शब्दों को दाईं ओर के सही संथाली (ओल चिकी) शब्दों से मिलाएँ।",
+    "type": "matching",
+    "icon": "🧩",
+    "pairs": [
+      {
+        "hindi": "नमस्ते",
+        "olchiki": "ᱡᱚᱦᱟᱨ",
+        "latin": "Johar"
+      },
+      {
+        "hindi": "पानी",
+        "olchiki": "ᱫᱟᱜ",
+        "latin": "Dak'"
+      },
+      {
+        "hindi": "किताब",
+        "olchiki": "ᱯᱩᱛᱷᱤ",
+        "latin": "Puthi"
+      },
+      {
+        "hindi": "शिक्षक",
+        "olchiki": "ᱢᱟᱪᱮᱛ",
+        "latin": "Machet'"
+      },
+      {
+        "hindi": "विद्यालय",
+        "olchiki": "ᱤᱛᱩᱱ ᱟᱥᱲᱟ",
+        "latin": "Itun asṛa"
+      }
+    ]
+  },
+  {
+    "id": "ws_02",
+    "title": "कार्यपत्रिका 2: कक्षा निर्देश पहचानो (Classroom Commands)",
+    "title_olchiki": "ᱠᱟᱹᱢᱤ ᱥᱟᱠᱟᱢ ᱒ : ᱦᱩᱠᱩᱢ ᱴᱷᱤᱠᱟᱹᱭ",
+    "description": "शिक्षक द्वारा दिए गए हिंदी निर्देश का सही संथाली रूप पहचानें।",
+    "type": "quiz",
+    "icon": "🎯",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "शिक्षक कहते हैं: 'सभी बच्चे बैठ जाओ'। संथाली में क्या कहेंगे?",
+        "options": [
+          { "text": "ᱫᱩᱲᱩᱵᱽ ᱢᱮ (Duṛup' me)", "is_correct": true },
+          { "text": "ᱛᱤᱸᱜᱩᱱ ᱢᱮ (Tingun me)", "is_correct": false },
+          { "text": "ᱚᱞ ᱢᱮ (Ol me)", "is_correct": false }
+        ],
+        "explanation": "'बैठ जाओ' को संथाली में 'ᱫᱩᱲᱩᱵᱽ ᱢᱮ' (Duṛup' me) कहा जाता है।"
+      },
+      {
+        "id": "q2",
+        "question": "शिक्षक कहते हैं: 'अपनी किताब खोलो'। संथाली में क्या निर्देश होगा?",
+        "options": [
+          { "text": "ᱯᱩᱛᱷᱤ ᱵᱚᱸᱫᱽ ᱢᱮ (Puthi bond me)", "is_correct": false },
+          { "text": "ᱯᱩᱛᱷᱤ ᱡᱷᱤᱡᱽ ᱢᱮ (Puthi jhij me)", "is_correct": true },
+          { "text": "ᱱᱚᱰᱮ ᱦᱤᱡᱩᱜ ᱢᱮ (Noḍe hijuk' me)", "is_correct": false }
+        ],
+        "explanation": "'किताब खोलो' को संथाली में 'ᱯᱩᱛᱷᱤ ᱡᱷᱤᱡᱽ ᱢᱮ' (Puthi jhij me) कहते हैं।"
+      },
+      {
+        "id": "q3",
+        "question": "यदि किसी बच्चे ने बहुत सुंदर काम किया, तो शिक्षक शाबाशी में क्या कहेंगे?",
+        "options": [
+          { "text": "ᱛᱷᱤᱨ ᱠᱚᱜ ᱢᱮ (Thir kok' me)", "is_correct": false },
+          { "text": "ᱵᱟᱝ (Bang)", "is_correct": false },
+          { "text": "ᱟᱹᱰᱤ ᱵᱷᱟᱹᱜᱤ (Aḍi bhạgi)", "is_correct": true }
+        ],
+        "explanation": "'बहुत अच्छा / शाबाश' को संथाली में 'ᱟᱹᱰᱤ ᱵᱷᱟᱹᱜᱤ' (Aḍi bhạgi) कहते हैं।"
+      },
+      {
+        "id": "q4",
+        "question": "कक्षा में शांति बनाए रखने के लिए 'चुप रहो' का संथाली अनुवाद क्या है?",
+        "options": [
+          { "text": "ᱛᱷᱤᱨ ᱠᱚᱜ ᱢᱮ (Thir kok' me)", "is_correct": true },
+          { "text": "ᱯᱟᱲᱦᱟᱣ ᱢᱮ (Paṛhaw me)", "is_correct": false },
+          { "text": "ᱛᱤᱸᱜᱩᱱ ᱢᱮ (Tingun me)", "is_correct": false }
+        ],
+        "explanation": "'चुप रहो' के लिए संथाली में 'ᱛᱷᱤᱨ ᱠᱚᱜ ᱢᱮ' (Thir kok' me) कहा जाता है।"
+      }
+    ]
+  },
+  {
+    "id": "ws_03",
+    "title": "कार्यपत्रिका 3: ओल चिकी गिनती पहचान (Number Quiz)",
+    "title_olchiki": "ᱠᱟᱹᱢᱤ ᱥᱟᱠᱟᱢ ᱓ : ᱮᱞ ᱵᱟᱪᱷᱟᱣ",
+    "description": "ओल चिकी अंकों को पहचानकर सही हिंदी संख्या पर निशान लगाएँ।",
+    "type": "quiz",
+    "icon": "🔢",
+    "questions": [
+      {
+        "id": "qn1",
+        "question": "ओल चिकी अंक '᱓' (ᱯᱮ - Pē) का हिंदी मान क्या है?",
+        "options": [
+          { "text": "3 (तीन)", "is_correct": true },
+          { "text": "1 (एक)", "is_correct": false },
+          { "text": "5 (पाँच)", "is_correct": false }
+        ],
+        "explanation": "ओल चिकी अंक ᱓ का अर्थ 3 (तीन / Pē) होता है।"
+      },
+      {
+        "id": "qn2",
+        "question": "ओल चिकी अंक '᱕' (ᱢᱚᱬᱮ - Mõṛẽ) का हिंदी मान क्या है?",
+        "options": [
+          { "text": "2 (दो)", "is_correct": false },
+          { "text": "5 (पाँच)", "is_correct": true },
+          { "text": "8 (आठ)", "is_correct": false }
+        ],
+        "explanation": "ओल चिकी अंक ᱕ का अर्थ 5 (पाँच / Mõṛẽ) होता है।"
+      },
+      {
+        "id": "qn3",
+        "question": "हिंदी संख्या '10' (दस) को ओल चिकी में कैसे लिखते हैं?",
+        "options": [
+          { "text": "᱑᱐ (ᱜᱮᱞ - Gel)", "is_correct": true },
+          { "text": "᱐᱑ (Mit')", "is_correct": false },
+          { "text": "᱗ (Eyay)", "is_correct": false }
+        ],
+        "explanation": "10 को ओल चिकी में ᱑᱐ (Gel) लिखा जाता है।"
+      }
+    ]
+  },
+  {
+    "id": "ws_04",
+    "title": "कार्यपत्रिका 4: पशु-पक्षी और प्रकृति (Nature Quiz)",
+    "title_olchiki": "ᱠᱟᱹᱢᱤ ᱥᱟᱠᱟᱢ ᱔ : ᱡᱤᱵᱽ-ᱡᱤᱭᱟᱹᱞᱤ ᱠᱩᱠᱞᱤ",
+    "description": "चित्र और नाम पहचान कर सही संथाली शब्द चुनिए।",
+    "type": "quiz",
+    "icon": "🐘",
+    "questions": [
+      {
+        "id": "qp1",
+        "question": "हाथी (Elephant) को संथाली ओल चिकी में क्या कहते हैं?",
+        "options": [
+          { "text": "ᱦᱟᱹᱛᱤ (Hạti)", "is_correct": true },
+          { "text": "ᱦᱟᱹᱠᱩ (Hạku)", "is_correct": false },
+          { "text": "ᱥᱮᱛᱟ (Seta)", "is_correct": false }
+        ],
+        "explanation": "हाथी को संथाली में 'ᱦᱟᱹᱛᱤ' (Hạti) कहते हैं, जबकि मछली को 'ᱦᱟᱹᱠᱩ' कहते हैं।"
+      },
+      {
+        "id": "qp2",
+        "question": "'ᱫᱟᱜ' (Dak') का हिंदी में क्या अर्थ होता है?",
+        "options": [
+          { "text": "आग", "is_correct": false },
+          { "text": "पानी / जल", "is_correct": true },
+          { "text": "पेड़", "is_correct": false }
+        ],
+        "explanation": "'ᱫᱟᱜ' (Dak') का अर्थ पानी अथवा वर्षा जल होता है।"
+      },
+      {
+        "id": "qp3",
+        "question": "गाय (Cow) को संथाली में क्या कहते हैं?",
+        "options": [
+          { "text": "ᱜᱟᱹᱭ (Gạ̄i)", "is_correct": true },
+          { "text": "ᱯᱩᱥᱤ (Pusi)", "is_correct": false },
+          { "text": "ᱪᱮᱬᱮ (Cēṛē)", "is_correct": false }
+        ],
+        "explanation": "गाय को संथाली में 'ᱜᱟᱹᱭ' (Gạ̄i) और बिल्ली को 'ᱯᱩᱥᱤ' कहते हैं।"
+      }
+    ]
+  }
+]

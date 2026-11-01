@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SikshaSetu AI - प्राथमिक विद्यालय में संथाली भाषी बच्चों के लिए मातृभाषा शिक्षण सहायक (Hindi to Santhali Bridge)">
+  <meta name="theme-color" content="#FF6B35">
+  <title>SikshaSetu AI | शिक्षासेतु - संथाली मातृभाषा सहायक</title>
+
+  <!-- Google Fonts: Outfit for English/UI, Noto Sans Devanagari for Hindi, Noto Sans Ol Chiki for Santhali -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Ol+Chiki:wght@400;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Manifest for PWA Support -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="logo-badge">
+          <span class="logo-icon">🌉</span>
+        </div>
+        <div class="logo-text">
+          <h1 class="app-title">SikshaSetu <span class="highlight-ai">AI</span></h1>
+          <p class="app-tagline">
+            <span class="hindi-tag">शिक्षासेतु</span> • 
+            <span class="olchiki-tag olchiki-font">ᱥᱤᱠᱷᱟᱹ ᱥᱮᱛᱩ</span> • 
+            <span>Hindi - Santhali Learning Bridge</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <!-- Live Offline / Online Indicator -->
+        <div id="offlineIndicator" class="status-indicator online" title="नेटवर्क स्थिति (Network Status)">
+          <span class="status-dot"></span>
+          <span id="networkStatusText" class="status-label">🟢 ऑनलाइन <span class="en-sub-inline">(Online)</span></span>
+        </div>
+
+        <!-- UI Language Selector -->
+        <div class="lang-switch-box">
+          <button id="langHiBtn" class="lang-btn active" title="हिंदी माध्यम">🇮🇳 हिंदी</button>
+          <button id="langSantBtn" class="lang-btn olchiki-font" title="संथाली ओल चिकी माध्यम">ᱚᱞ ᱪᱤᱠᱤ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="main-nav" aria-label="मुख्य नेविगेशन">
+      <div class="nav-container">
+        <button class="nav-tab active" data-tab="tab-translator" id="navTabTranslator">
+          <span class="nav-icon">🗣️</span>
+          <div class="nav-label-group">
+            <span class="nav-text" data-i18n="nav_translator">कक्षा अनुवादक</span>
+            <span class="en-sub">(Classroom Translator)</span>
+          </div>
+        </button>
+        <button class="nav-tab" data-tab="tab-flashcards" id="navTabFlashcards">
+          <span class="nav-icon">🃏</span>
+          <div class="nav-label-group">
+            <span class="nav-text" data-i18n="nav_flashcards">चित्र फ्लैशकार्ड</span>
+            <span class="en-sub">(Picture Flashcards)</span>
+          </div>
+        </button>
+        <button class="nav-tab" data-tab="tab-lessons" id="navTabLessons">
+          <span class="nav-icon">📚</span>
+          <div class="nav-label-group">
+            <span class="nav-text" data-i18n="nav_lessons">सीखने के पाठ</span>
+            <span class="en-sub">(Learning Lessons)</span>
+          </div>
+        </button>
+        <button class="nav-tab" data-tab="tab-worksheets" id="navTabWorksheets">
+          <span class="nav-icon">📝</span>
+          <div class="nav-label-group">
+            <span class="nav-text" data-i18n="nav_worksheets">कार्यपत्रिकाएँ</span>
+            <span class="en-sub">(Worksheets)</span>
+          </div>
+        </button>
+        <button class="nav-tab" data-tab="tab-guide" id="navTabGuide">
+          <span class="nav-icon">ℹ️</span>
+          <div class="nav-label-group">
+            <span class="nav-text" data-i18n="nav_guide">मार्गदर्शिका</span>
+            <span class="en-sub">(Guide)</span>
+          </div>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="app-main">
+    <!-- ==================== TAB 1: TRANSLATOR ==================== -->
+    <section id="tab-translator" class="tab-panel active">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <h2 class="panel-title">
+            <span class="emoji">🗣️</span> 
+            <div>
+              <span data-i18n="trans_title">कक्षा संवाद अनुवादक (Hindi ➔ Santhali)</span>
+              <span class="en-sub">(Classroom Dialogue Translator)</span>
+            </div>
+          </h2>
+          <p class="panel-desc" data-i18n="trans_desc">
+            प्राथमिक विद्यालय के शिक्षक कक्षा में हिंदी निर्देश बोलें या लिखें — संथाली भाषी बच्चों के लिए प्रमाणित ओल चिकी व उच्चारण देखें।
+            <span class="en-sub">(Teachers enter Hindi instructions to view verified Santhali Ol Chiki text & pronunciation for primary students)</span>
+          </p>
+        </div>
+        <div class="verified-guarantee-badge">
+          <span class="shield-icon">🛡️</span>
+          <span>सत्यापित संथाली शब्दावली आधारित <span class="en-sub-inline">(Verified Entries Only)</span></span>
+        </div>
+      </div>
+
+      <div class="translator-grid">
+        <!-- Input Column -->
+        <div class="card translator-input-card">
+          <div class="card-header">
+            <label for="hindiInput" class="input-label">
+              <span class="badge-number">1</span> 
+              <div>
+                <span data-i18n="trans_input_label">शिक्षक का हिंदी निर्देश / वाक्य दर्ज करें:</span>
+                <span class="en-sub">(Enter the classroom instruction in Hindi)</span>
+              </div>
+            </label>
+            <button id="clearInputBtn" class="btn-text-only" title="साफ़ करें (Clear)">साफ़ करें ✖ <span class="en-sub-inline">(Clear)</span></button>
+          </div>
+
+          <div class="input-wrapper">
+            <textarea 
+              id="hindiInput" 
+              class="hindi-textarea" 
+              placeholder="उदाहरण: 'बैठ जाओ', 'किताब खोलो', 'पानी पीना है?', 'शाबाश'..."
+              rows="3"
+            ></textarea>
+            
+            <div class="input-actions-bar">
+              <!-- Voice Input Button (Web Speech API) -->
+              <button id="voiceInputBtn" class="btn-voice" title="हिंदी में बोलें (आवाज द्वारा दर्ज करें)">
+                <span class="voice-icon">🎤</span>
+                <span id="voiceBtnText">बोलकर लिखें</span>
+                <span class="en-sub-inline">(Voice Input)</span>
+              </button>
+
+              <button id="translateBtn" class="btn btn-primary">
+                <span class="btn-icon">⚡</span>
+                <span data-i18n="btn_translate">अनुवाद करें</span>
+                <span class="en-sub-inline">(Translate)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Voice recognition live status banner -->
+          <div id="voiceStatusMsg" class="voice-status-box hidden">
+            <span class="pulse-mic">🔴</span>
+            <span id="voiceStatusText">सुन रहे हैं... कृपया हिंदी में बोलें (Listening... please speak in Hindi)</span>
+          </div>
+
+          <!-- Quick Suggestions Chips -->
+          <div class="quick-chips-section">
+            <span class="chips-title">💡 त्वरित कक्षा निर्देश (क्लिक करें) <span class="en-sub-inline">(Quick Classroom Commands - Click to Translate):</span></span>
+            <div id="quickChipsContainer" class="chips-list">
+              <button class="chip-btn" data-text="बैठ जाओ">🪑 बैठ जाओ <span class="chip-en">(Sit down)</span></button>
+              <button class="chip-btn" data-text="खड़े हो जाओ">🧍 खड़े हो जाओ <span class="chip-en">(Stand up)</span></button>
+              <button class="chip-btn" data-text="किताब खोलो">📖 किताब खोलो <span class="chip-en">(Open book)</span></button>
+              <button class="chip-btn" data-text="पानी पीना है?">💧 पानी पीना है? <span class="chip-en">(Want water?)</span></button>
+              <button class="chip-btn" data-text="लिखो">✏️ लिखो <span class="chip-en">(Write)</span></button>
+              <button class="chip-btn" data-text="चुप रहो">🤫 चुप रहो <span class="chip-en">(Be quiet)</span></button>
+              <button class="chip-btn" data-text="शाबाश">🌟 बहुत अच्छा <span class="chip-en">(Very good)</span></button>
+              <button class="chip-btn" data-text="नमस्ते">🙏 नमस्ते <span class="chip-en">(Greetings)</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="card translator-output-card" id="outputCard">
+          <div class="card-header">
+            <div class="output-label-box">
+              <span class="badge-number">2</span>
+              <div>
+                <span data-i18n="trans_output_label">संथाली अनुवाद (Ol Chiki & उच्चारण):</span>
+                <span class="en-sub">(Santhali Translation & Pronunciation)</span>
+              </div>
+            </div>
+            <!-- Verification Tag -->
+            <div id="verifiedBadge" class="verification-tag verified hidden">
+              <span class="verify-icon">✓</span> 
+              <span id="verifiedBadgeText">सत्यापित संथाली (Verified)</span>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div id="translationPlaceholder" class="translation-empty-state">
+            <div class="empty-icon">📖</div>
+            <p class="empty-title">कक्षा निर्देश दर्ज करें <span class="en-sub">(Enter classroom instruction)</span></p>
+            <p class="empty-sub">
+              बाईं ओर हिंदी वाक्य लिखें या त्वरित बटनों पर क्लिक करें। प्रमाणित संथाली अनुवाद तुरंत दिखाई देगा।
+              <span class="en-sub">(Type Hindi text on the left or click quick buttons. Verified Santhali translation will appear here.)</span>
+            </p>
+          </div>
+
+          <!-- Result Area -->
+          <div id="translationResultArea" class="translation-result-box hidden">
+            <!-- Ol Chiki Script Big Display -->
+            <div class="olchiki-display-card">
+              <div class="olchiki-header">
+                <span class="script-tag">संथाली लिपि (Ol Chiki) <span class="en-sub-inline">(Santhali Script)</span></span>
+                <span id="resultCategory" class="category-pill">कक्षा निर्देश</span>
+              </div>
+              <div id="resultOlChiki" class="olchiki-main-text olchiki-font">
+                ᱫᱩᱲᱩᱵᱽ ᱢᱮ
+              </div>
+
+              <!-- Output Explanation Callout -->
+              <div class="output-explanation-note">
+                ℹ️ <strong>आउटपुट विवरण (Output Explanation):</strong> यह अनुभाग ओल चिकी लिपि में संथाली मातृभाषा अनुवाद और सत्यापित उच्चारण प्रदर्शित करता है।
+                <span class="en-sub">(Displays verified Santhali mother-tongue translation in Ol Chiki script with pronunciation guide.)</span>
+              </div>
+
+              <div id="transliterationBox" class="transliteration-box">
+                <span class="roman-label">रोमन उच्चारण <span class="en-sub-inline">(Roman Pronunciation):</span></span>
+                <span id="resultLatin" class="roman-val">Duṛup' me</span>
+                <span class="devanagari-label">देवनागरी उच्चारण <span class="en-sub-inline">(Devanagari Pronunciation):</span></span>
+                <span id="resultDevanagari" class="devanagari-val">दुरुप मे</span>
+              </div>
+            </div>
+
+            <!-- Meaning & Context -->
+            <div class="context-detail-card">
+              <div class="detail-row">
+                <span class="detail-label">मूल हिंदी इनपुट <span class="en-sub-inline">(Input Hindi):</span></span>
+                <span id="resultHindiMeaning" class="detail-val">बैठ जाओ</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">अंग्रेजी अर्थ <span class="en-sub-inline">(English Meaning of Input):</span></span>
+                <span id="resultEnglishMeaning" class="detail-val">Sit down</span>
+              </div>
+              <div class="detail-row teacher-note-row">
+                <span class="detail-label">शिक्षक के लिए सुझाव <span class="en-sub-inline">(Teacher Tip):</span></span>
+                <span id="resultContext" class="detail-val context-note">बच्चे को अपनी जगह पर बैठने के लिए प्यार से कहें।</span>
+              </div>
+
+              <!-- Important Disclaimer Note regarding English meaning -->
+              <div class="en-disclaimer-note">
+                ⚠️ <strong>महत्वपूर्ण नोट (Important Notice):</strong> अंग्रेजी अर्थ केवल शिक्षक की सहायता और समझ के लिए दिया गया है; यह संथाली अनुवाद के सही होने का भाषाई प्रमाण नहीं है। संथाली अनुवाद केवल हमारे सत्यापित भाषाविद शब्दकोश पर आधारित है।
+                <span class="en-sub">(The English meaning is provided for teacher comprehension and does not serve as linguistic proof that the Santhali translation is correct. Santhali translations strictly rely on verified lexicographic records.)</span>
+              </div>
+            </div>
+
+            <!-- Audio Playback Area -->
+            <div class="audio-playback-section">
+              <div class="audio-controls-row">
+                <button id="playAudioBtn" class="btn btn-audio">
+                  <span class="audio-btn-icon">🔊</span>
+                  <span id="audioBtnLabel">उच्चारण सुनें</span>
+                  <span class="en-sub-inline">(Listen Audio)</span>
+                </button>
+                <button id="slowAudioBtn" class="btn btn-audio-slow" title="धीमी गति से स्पष्ट सुनें">
+                  <span>🐢 धीमा उच्चारण</span>
+                  <span class="en-sub-inline">(Slow Speed)</span>
+                </button>
+                <button id="copyTranslationBtn" class="btn btn-secondary" title="अनुवाद कॉपी करें">
+                  <span>📋 कॉपी</span>
+                  <span class="en-sub-inline">(Copy)</span>
+                </button>
+              </div>
+
+              <!-- Animated Sound Wave Visualizer -->
+              <div id="soundWaveBox" class="sound-wave-box hidden">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <span class="wave-caption">संथाली उच्चारण बज रहा है... <span class="en-sub-inline">(Playing pronunciation...)</span></span>
+              </div>
+
+              <div id="audioStatusNotice" class="audio-notice-box">
+                <span class="info-icon">ℹ️</span>
+                <span id="audioNoticeText">प्रमाणित फोनेटिक उच्चारण गाइड सक्रिय है।</span>
+                <span class="en-sub-inline">(Verified phonetic guide active)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi-line Translation Result Area -->
+          <div id="translationMultilineArea" class="translation-multiline-box hidden">
+            <div class="multiline-header">
+              <span class="multiline-tag">📝 पंक्ति-वार अनुवाद (Line-by-Line Translation)</span>
+              <span id="multilineCountBadge" class="multiline-badge">0 पंक्तियाँ</span>
+            </div>
+            <div id="multilineRowsContainer" class="multiline-rows-list"></div>
+          </div>
+
+          <!-- Unverified Notification State -->
+          <div id="unverifiedNoticeArea" class="unverified-state-box hidden">
+            <div class="unverified-alert-icon">⚠️</div>
+            <h4 class="unverified-alert-title" id="unverifiedAlertTitle">Verified translation unavailable</h4>
+            <span class="en-sub" style="font-weight:600; color:#991B1B; margin-bottom:8px;">(No verified Santhali entry found in vocabulary dataset)</span>
+            <p class="unverified-alert-desc">
+              यह वाक्य वर्तमान में हमारे सत्यापित संथाली डेटाबेस में उपलब्ध नहीं है। 
+              प्राथमिक शिक्षा में गलत शब्द सिखाने से बचने के लिए, SikshaSetu केवल प्रमाणित भाषाविदों द्वारा अनुमोदित अनुवाद ही प्रस्तुत करता है।
+              <span class="en-sub" style="color:#7F1D1D; margin-top:4px;">(This sentence is not currently in our verified Santhali vocabulary dataset. To prevent teaching inaccurate words in primary school, only verified translations are shown.)</span>
+            </p>
+            <div class="unverified-suggestions">
+              <span class="sub-lead">उपलब्ध प्रमाणित वाक्यांश आज़माएँ <span class="en-sub-inline">(Try available verified phrases):</span></span>
+              <div id="unverifiedSuggestionsList" class="mini-chips"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: FLASHCARDS ==================== -->
+    <section id="tab-flashcards" class="tab-panel">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <h2 class="panel-title">
+            <span class="emoji">🃏</span> 
+            <div>
+              <span data-i18n="fc_title">चित्र फ्लैशकार्ड (Visual Flashcards)</span>
+              <span class="en-sub">(Interactive visual cards for vocabulary learning)</span>
+            </div>
+          </h2>
+          <p class="panel-desc" data-i18n="fc_desc">
+            रंग-बिरंगे चित्रों और ओल चिकी लिपि के साथ संथाली शब्दों को आसानी से सीखें। कार्ड पर क्लिक करके पलटें!
+            <span class="en-sub">(Learn Santhali words easily with colorful pictures and Ol Chiki script. Click card to flip!)</span>
+          </p>
+        </div>
+        <div class="fc-counter-badge">
+          <span id="flashcardCountLabel">50 कार्ड उपलब्ध</span>
+          <span class="en-sub-inline">(50 Cards Available)</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-filters-scroll">
+        <button class="filter-pill active" data-category="all">✨ सभी शब्द <span class="en-sub-inline">(All)</span></button>
+        <button class="filter-pill" data-category="कक्षा">🪑 कक्षा निर्देश <span class="en-sub-inline">(Classroom)</span></button>
+        <button class="filter-pill" data-category="गिनती">🔢 संथाली गिनती <span class="en-sub-inline">(Numbers)</span></button>
+        <button class="filter-pill" data-category="शिष्टाचार">🙏 शिष्टाचार <span class="en-sub-inline">(Greetings)</span></button>
+        <button class="filter-pill" data-category="विद्यालय">🎒 विद्यालय <span class="en-sub-inline">(School)</span></button>
+        <button class="filter-pill" data-category="पशु">🐘 पशु-पक्षी <span class="en-sub-inline">(Animals)</span></button>
+        <button class="filter-pill" data-category="प्रकृति">🌳 प्रकृति व जीवन <span class="en-sub-inline">(Nature)</span></button>
+        <button class="filter-pill" data-category="परिवार">👨‍👩‍👧 परिवार <span class="en-sub-inline">(Family)</span></button>
+      </div>
+
+      <!-- Flashcards Grid -->
+      <div id="flashcardsGrid" class="flashcards-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: LESSONS ==================== -->
+    <section id="tab-lessons" class="tab-panel">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <h2 class="panel-title">
+            <span class="emoji">📚</span> 
+            <div>
+              <span data-i18n="lessons_title">सीखने के पाठ (Classroom Modules)</span>
+              <span class="en-sub">(Structured curriculum lessons for teacher-student dialogue)</span>
+            </div>
+          </h2>
+          <p class="panel-desc" data-i18n="lessons_desc">
+            प्राथमिक कक्षा के लिए संरचित पाठ्यक्रम: शिक्षक और संथाली बच्चों के बीच सहज संवाद के व्यावहारिक पाठ।
+            <span class="en-sub">(Primary curriculum: practical lessons for easy teacher-student dialogue)</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Lessons Cards Container -->
+      <div id="lessonsContainer" class="lessons-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Lesson Detail Modal -->
+      <div id="lessonModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+          <div class="modal-header">
+            <div class="modal-title-wrap">
+              <span id="modalLessonIcon" class="modal-icon">📖</span>
+              <div>
+                <h3 id="modalLessonTitle" class="modal-title">पाठ का नाम</h3>
+                <p id="modalLessonOlChiki" class="modal-olchiki olchiki-font">ᱯᱟᱴ ᱧᱩᱛᱩᱢ</p>
+              </div>
+            </div>
+            <button id="closeLessonModalBtn" class="close-modal-btn" title="बंद करें (Close)">✖</button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Teacher Tip Callout -->
+            <div class="teacher-tip-box">
+              <div class="tip-icon">💡</div>
+              <div>
+                <strong>शिक्षक के लिए टिप (Teacher Tip):</strong>
+                <p id="modalTeacherTip">टिप विवरण...</p>
+              </div>
+            </div>
+
+            <!-- Dialogue Section -->
+            <div class="modal-section">
+              <h4 class="section-title">🗣️ कक्षा संवाद (Classroom Dialogue)</h4>
+              <div id="modalDialogueContainer" class="dialogue-chat-box"></div>
+            </div>
+
+            <!-- Key Vocabulary Section -->
+            <div class="modal-section">
+              <h4 class="section-title">✨ मुख्य शब्दावली (Key Vocabulary)</h4>
+              <div id="modalVocabContainer" class="modal-vocab-grid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: WORKSHEETS ==================== -->
+    <section id="tab-worksheets" class="tab-panel">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <h2 class="panel-title">
+            <span class="emoji">📝</span> 
+            <div>
+              <span data-i18n="ws_title">इंटरैक्टिव कार्यपत्रिकाएँ (Interactive Worksheets)</span>
+              <span class="en-sub">(Engaging practice activities and quizzes for students)</span>
+            </div>
+          </h2>
+          <p class="panel-desc" data-i18n="ws_desc">
+            प्राथमिक कक्षा के बच्चों के लिए मनोरंजक शब्द मिलान एवं बहुविकल्पीय अभ्यास। सही उत्तर पर सितारे जीतें!
+            <span class="en-sub">(Fun word matching & multiple-choice exercises for children. Earn stars for correct answers!)</span>
+          </p>
+        </div>
+        <div class="score-display-badge">
+          <span class="score-star">⭐</span>
+          <span id="overallScoreText">कुल स्कोर: 0</span>
+          <span class="en-sub-inline">(Total Score)</span>
+        </div>
+      </div>
+
+      <!-- Worksheet Selector Buttons -->
+      <div id="worksheetSelector" class="worksheet-tab-nav">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Active Worksheet Container -->
+      <div id="activeWorksheetContainer" class="active-worksheet-card">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: ABOUT & GUIDE ==================== -->
+    <section id="tab-guide" class="tab-panel">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <h2 class="panel-title">
+            <span class="emoji">ℹ️</span> 
+            <div>
+              <span>शिक्षासेतु AI मार्गदर्शिका एवं संथाली भाषा परिचय</span>
+              <span class="en-sub">(SikshaSetu AI Guide & Santhali Language Introduction)</span>
+            </div>
+          </h2>
+          <p class="panel-desc">
+            राष्ट्रीय शिक्षा नीति (NEP 2020) के अनुरूप मातृभाषा आधारित प्राथमिक शिक्षण को बढ़ावा देने की पहल।
+            <span class="en-sub">(Promoting mother-tongue based primary education in alignment with NEP 2020)</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="guide-grid">
+        <div class="card guide-card">
+          <div class="guide-card-icon">🎯</div>
+          <h3>हमारा उद्देश्य (Project Mission)</h3>
+          <p>
+            झारखंड, पश्चिम बंगाल, ओडिशा और बिहार के कई प्राथमिक विद्यालयों में शिक्षक हिंदी में पढ़ाते हैं, जबकि संथाली बच्चे अपने घर में संथाली (Santali) बोलते हैं।
+          </p>
+          <p>
+            यह भाषा भेद बच्चों में झिझक और सीखने में बाधा उत्पन्न करता है। <strong>SikshaSetu AI</strong> शिक्षक के हाथ में एक सेतु देता है जिससे वे कक्षा के सामान्य निर्देशों को संथाली में बोलकर बच्चों को अपनत्व और सहजता प्रदान कर सकें।
+          </p>
+          <p class="en-sub" style="font-size: 0.8rem; border-top: 1px dashed var(--color-border); padding-top: 8px;">
+            (Mission: Bridges the communication gap between Hindi-speaking teachers and Santhali-speaking primary children to create an inclusive, comfortable classroom.)
+          </p>
+        </div>
+
+        <div class="card guide-card">
+          <div class="guide-card-icon">🔤</div>
+          <h3>ओल चिकी लिपि (Ol Chiki Script)</h3>
+          <p>
+            संथाली भाषा की आधिकारिक लिपि <strong>ओल चिकी (ᱚᱞ ᱪᱤᱠᱤ)</strong> है, जिसका आविष्कार महान भाषाविद <strong>पंडित रघुनाथ मुर्मू</strong> द्वारा 1925 में किया गया था।
+          </p>
+          <p>
+            ओल चिकी में 30 मूल वर्ण और 5 विशेष चिह्न हैं। यह ध्वन्यात्मक रूप से संथाली भाषा के अद्वितीय उच्चारणों को सटीक रूप से व्यक्त करती है।
+          </p>
+          <p class="en-sub" style="font-size: 0.8rem; border-top: 1px dashed var(--color-border); padding-top: 8px;">
+            (Script: Official Santhali script created by Pandit Raghunath Murmu in 1925, featuring 30 base characters and phonetic markers.)
+          </p>
+        </div>
+
+        <div class="card guide-card">
+          <div class="guide-card-icon">🛡️</div>
+          <h3>प्रमाणित अनुवाद नीति (Verified Translation Policy)</h3>
+          <p>
+            बच्चों की शिक्षा में अशुद्ध या मनगढ़ंत अनुवाद बेहद हानिकारक है। इसलिए SikshaSetu AI किसी काल्पनिक या अप्रमाणित अनुवाद को कभी नहीं दिखाता।
+          </p>
+          <p>
+            यदि कोई शब्द हमारे सत्यापित शब्दकोश में नहीं है, तो सिस्टम स्पष्ट रूप से चेतावनी देता है: <em>"Verified translation unavailable"</em>
+          </p>
+          <p class="en-sub" style="font-size: 0.8rem; border-top: 1px dashed var(--color-border); padding-top: 8px;">
+            (Policy: Zero invented words. If a term is not in verified linguistic datasets, 'Verified translation unavailable' is explicitly displayed.)
+          </p>
+        </div>
+
+        <div class="card guide-card">
+          <div class="guide-card-icon">📲</div>
+          <h3>ऑफलाइन PWA सुविधा (Works Offline Without Internet)</h3>
+          <p>
+            ग्रामीण व वनवर्ती क्षेत्रों के विद्यालयों में इंटरनेट की समस्या आम है। SikshaSetu AI को <strong>Progressive Web App (PWA)</strong> के रूप में डिज़ाइन किया गया है।
+          </p>
+          <p>
+            एक बार लोड होने के बाद यह एप्लिकेशन स्थानीय रूप से कैश हो जाता है और बिना सक्रिय इंटरनेट के भी संपूर्ण शिक्षण सामग्री, फ्लैशकार्ड और वर्कशीट उपलब्ध कराता है।
+          </p>
+          <p class="en-sub" style="font-size: 0.8rem; border-top: 1px dashed var(--color-border); padding-top: 8px;">
+            (Offline: Designed as a Progressive Web App (PWA) to serve rural schools with zero internet dependency once loaded.)
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p class="footer-copy">
+        <strong>SikshaSetu AI (शिक्षासेतु)</strong> • प्राथमिक मातृभाषा शिक्षा सेतु • Santhali & Hindi Bridge
+      </p>
+      <p class="footer-note">
+        Powered by FastAPI & PWA Offline Engine • Designed with ❤️ for Primary Learners
+      </p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

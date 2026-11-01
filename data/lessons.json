@@ -1,0 +1,300 @@
+[
+  {
+    "id": "lesson_01",
+    "title": "पाठ 1: अभिवादन और शिष्टाचार",
+    "title_olchiki": "ᱯᱟᱴ ᱑ : ᱡᱚᱦᱟᱨ ᱟᱨ ᱥᱤᱥᱴᱟᱪᱟᱨ",
+    "description": "कक्षा में बच्चों से संथाली में नमस्ते (ᱡᱚᱦᱟᱨ) कहना और उनका आत्मीय स्वागत करना सीखें।",
+    "level": "प्राथमिक कक्षा 1-2",
+    "icon": "🙏",
+    "theme": "sunset",
+    "teacher_tip": "सुबह कक्षा में प्रवेश करते समय मुस्कुराकर 'ᱡᱚᱦᱟᱨ' (Johar) बोलें। इससे बच्चे तुरंत सहज और सुरक्षित महसूस करेंगे।",
+    "dialogue": [
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "नमस्ते बच्चों! शुभ प्रभात!",
+        "santhali_olchiki": "ᱡᱚᱦᱟᱨ ᱜᱤᱫᱽᱨᱟᱹ! ᱥᱟᱹᱜᱩᱱ ᱥᱮᱛᱟᱜ!",
+        "santhali_latin": "Johar gidra! Sagun setak'!"
+      },
+      {
+        "speaker": "बच्चे (Students)",
+        "hindi": "नमस्ते गुरुजी!",
+        "santhali_olchiki": "ᱡᱚᱦᱟᱨ ᱢᱟᱪᱮᱛ ᱜᱚᱝᱠᱮ!",
+        "santhali_latin": "Johar māchet gonke!"
+      },
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "कक्षा में आपका स्वागत है!",
+        "santhali_olchiki": "ᱟᱯᱮᱭᱟᱜ ᱥᱟᱹᱜᱩᱱ ᱫᱟᱨᱟᱢ!",
+        "santhali_latin": "Apeyag sagun daram!"
+      }
+    ],
+    "vocabulary": [
+      {
+        "hindi": "नमस्ते",
+        "olchiki": "ᱡᱚᱦᱟᱨ",
+        "latin": "Johar",
+        "meaning": "Hello / Greetings"
+      },
+      {
+        "hindi": "सुप्रभात",
+        "olchiki": "ᱥᱟᱹᱜᱩᱱ ᱥᱮᱛᱟᱜ",
+        "latin": "Sagun setak'",
+        "meaning": "Good morning"
+      },
+      {
+        "hindi": "स्वागत है",
+        "olchiki": "ᱥᱟᱹᱜᱩᱱ ᱫᱟᱨᱟᱢ",
+        "latin": "Sagun daram",
+        "meaning": "Welcome"
+      },
+      {
+        "hindi": "धन्यवाद",
+        "olchiki": "ᱥᱟᱨᱦᱟᱣ",
+        "latin": "Sarhao",
+        "meaning": "Thank you"
+      }
+    ]
+  },
+  {
+    "id": "lesson_02",
+    "title": "पाठ 2: कक्षा के आवश्यक निर्देश",
+    "title_olchiki": "ᱯᱟᱴ ᱒ : ᱤᱛᱩᱱ ᱟᱥᱲᱟ ᱨᱮᱱᱟᱜ ᱦᱩᱠᱩᱢ",
+    "description": "बैठने, खड़े होने, किताब खोलने और पढ़ने के सरल निर्देश, जिन्हें बच्चे आसानी से समझते हैं।",
+    "level": "प्राथमिक कक्षा 1-2",
+    "icon": "🏫",
+    "theme": "ocean",
+    "teacher_tip": "कक्षा में निर्देशों के साथ शारीरिक संकेत (हाथ से बैठने का इशारा आदि) भी करें, जिससे समझ दुगुनी हो जाती है।",
+    "dialogue": [
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "सभी बच्चे बैठ जाओ!",
+        "santhali_olchiki": "ᱡᱚᱛᱚ ᱜᱤᱫᱽᱨᱟᱹ ᱫᱩᱲᱩᱵᱽ ᱯᱮ!",
+        "santhali_latin": "Joto gidra duṛup' pe!"
+      },
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "अपनी किताब खोलो और पढ़ो।",
+        "santhali_olchiki": "ᱟᱯᱱᱟᱨ ᱯᱩᱛᱷᱤ ᱡᱷᱤᱡᱽ ᱯᱮ ᱟᱨ ᱯᱟᱲᱦᱟᱣ ᱯᱮ᱾",
+        "santhali_latin": "Apnar puthi jhij pe ar paṛhaw pe."
+      },
+      {
+        "speaker": "विद्यार्थी (Student)",
+        "hindi": "गुरुजी, क्या मैं पानी पीने जा सकता हूँ?",
+        "santhali_olchiki": "ᱢᱟᱪᱮᱛ, ᱫᱟᱜ ᱧᱩ ᱥᱮᱱᱚᱜ-ᱟᱹᱧ?",
+        "santhali_latin": "Machet, dak' ñu senok'-añ?"
+      },
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "हाँ, जाओ।",
+        "santhali_olchiki": "ᱦᱮᱸ, ᱥᱮᱱᱚᱜ ᱢᱮ᱾",
+        "santhali_latin": "Hẽ, senok' me."
+      }
+    ],
+    "vocabulary": [
+      {
+        "hindi": "बैठ जाओ",
+        "olchiki": "ᱫᱩᱲᱩᱵᱽ ᱢᱮ",
+        "latin": "Duṛup' me",
+        "meaning": "Sit down"
+      },
+      {
+        "hindi": "खड़े हो जाओ",
+        "olchiki": "ᱛᱤᱸᱜᱩᱱ ᱢᱮ",
+        "latin": "Tingun me",
+        "meaning": "Stand up"
+      },
+      {
+        "hindi": "किताब खोलो",
+        "olchiki": "ᱯᱩᱛᱷᱤ ᱡᱷᱤᱡᱽ ᱢᱮ",
+        "latin": "Puthi jhij me",
+        "meaning": "Open your book"
+      },
+      {
+        "hindi": "लिखो",
+        "olchiki": "ᱚᱞ ᱢᱮ",
+        "latin": "Ol me",
+        "meaning": "Write"
+      },
+      {
+        "hindi": "चुप रहो",
+        "olchiki": "ᱛᱷᱤᱨ ᱠᱚᱜ ᱢᱮ",
+        "latin": "Thir kok' me",
+        "meaning": "Be quiet"
+      }
+    ]
+  },
+  {
+    "id": "lesson_03",
+    "title": "पाठ 3: ओल चिकी गिनती (1 से 10)",
+    "title_olchiki": "ᱯᱟᱴ ᱓ : ᱚᱞ ᱪᱤᱠᱤ ᱮᱞ (᱑ ᱠᱷᱚᱱ ᱑᱐)",
+    "description": "संथाली लिपि ओल चिकी में 1 से 10 तक संख्या पहचान और उच्चारण सीखें।",
+    "level": "प्राथमिक कक्षा 1",
+    "icon": "🔢",
+    "theme": "emerald",
+    "teacher_tip": "ओल चिकी अंकों (᱐, ᱑, ᱒, ᱓, ᱔, ᱕, ᱖, ᱗, ᱘, ᱙) को बोर्ड पर बड़े आकार में लिखकर बच्चों से उंगलियों से गिनवाएं।",
+    "dialogue": [
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "यह कितने सेब हैं? गिनो!",
+        "santhali_olchiki": "ᱱᱚᱣᱟ ᱛᱤᱱᱟᱹᱜ ᱥᱮᱣ ᱠᱟᱱᱟ? ᱞᱮᱠᱷᱟᱭ ᱢᱮ!",
+        "santhali_latin": "Nowa tinạk' sew kana? Lekhay me!"
+      },
+      {
+        "speaker": "विद्यार्थी (Student)",
+        "hindi": "एक, दो, तीन!",
+        "santhali_olchiki": "ᱢᱤᱫ, ᱵᱟᱨ, ᱯᱮ!",
+        "santhali_latin": "Mit', bar, pē!"
+      },
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "शाबाश! बहुत अच्छा!",
+        "santhali_olchiki": "ᱥᱟᱵᱟᱥ! ᱟᱹᱰᱤ ᱵᱷᱟᱹᱜᱤ!",
+        "santhali_latin": "Sabas! Aḍi bhạgi!"
+      }
+    ],
+    "vocabulary": [
+      {
+        "hindi": "1 (एक)",
+        "olchiki": "᱑ - ᱢᱤᱫ",
+        "latin": "Mit'",
+        "meaning": "One"
+      },
+      {
+        "hindi": "2 (दो)",
+        "olchiki": "᱒ - ᱵᱟᱨ",
+        "latin": "Bar",
+        "meaning": "Two"
+      },
+      {
+        "hindi": "3 (तीन)",
+        "olchiki": "᱓ - ᱯᱮ",
+        "latin": "Pē",
+        "meaning": "Three"
+      },
+      {
+        "hindi": "4 (चार)",
+        "olchiki": "᱔ - ᱯᱩᱱ",
+        "latin": "Pun",
+        "meaning": "Four"
+      },
+      {
+        "hindi": "5 (पाँच)",
+        "olchiki": "᱕ - ᱢᱚᱬᱮ",
+        "latin": "Mõṛẽ",
+        "meaning": "Five"
+      }
+    ]
+  },
+  {
+    "id": "lesson_04",
+    "title": "पाठ 4: मेरा प्यारा स्कूल और पढ़ाई",
+    "title_olchiki": "ᱯᱟᱴ ᱔ : ᱤᱧᱟᱜ ᱤᱛᱩᱱ ᱟᱥᱲᱟ ᱟᱨ ᱚᱞᱚᱜ",
+    "description": "विद्यालय, कापी, किताब, और कलम के संथाली नाम जानें।",
+    "level": "प्राथमिक कक्षा 1-2",
+    "icon": "🎒",
+    "theme": "lavender",
+    "teacher_tip": "कक्षा में उपस्थित असली वस्तुओं (कलम, कापी, बस्ता) को हाथ में उठाकर उनका संथाली नाम दोहराएँ।",
+    "dialogue": [
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "आपके हाथ में क्या है?",
+        "santhali_olchiki": "ᱟᱢᱟᱜ ᱛᱤ ᱨᱮ ᱪᱮᱫ ᱢᱮᱱᱟᱜ-ᱟ?",
+        "santhali_latin": "Amak' ti re chet' menak'-a?"
+      },
+      {
+        "speaker": "विद्यार्थी (Student)",
+        "hindi": "गुरुजी, यह मेरी किताब और कलम है।",
+        "santhali_olchiki": "ᱢᱟᱪᱮᱛ, ᱱᱚᱣᱟ ᱤᱧᱟᱜ ᱯᱩᱛᱷᱤ ᱟᱨ ᱠᱚᱞᱚᱢ ᱠᱟᱱᱟ᱾",
+        "santhali_latin": "Machet, nowa iñak' puthi ar kalom kana."
+      }
+    ],
+    "vocabulary": [
+      {
+        "hindi": "विद्यालय (स्कूल)",
+        "olchiki": "ᱤᱛᱩᱱ ᱟᱥᱲᱟ",
+        "latin": "Itun asṛa",
+        "meaning": "School"
+      },
+      {
+        "hindi": "शिक्षक",
+        "olchiki": "ᱢᱟᱪᱮᱛ",
+        "latin": "Machet'",
+        "meaning": "Teacher"
+      },
+      {
+        "hindi": "किताब",
+        "olchiki": "ᱯᱩᱛᱷᱤ",
+        "latin": "Puthi",
+        "meaning": "Book"
+      },
+      {
+        "hindi": "कापी",
+        "olchiki": "ᱠᱷᱟᱛᱟ",
+        "latin": "Khata",
+        "meaning": "Notebook"
+      },
+      {
+        "hindi": "कलम",
+        "olchiki": "ᱠᱚᱞᱚᱢ",
+        "latin": "Kalom",
+        "meaning": "Pen"
+      }
+    ]
+  },
+  {
+    "id": "lesson_05",
+    "title": "पाठ 5: हमारे प्यारे पशु और पक्षी",
+    "title_olchiki": "ᱯᱟᱴ ᱕ : ᱟᱵᱚ ᱨᱤᱱ ᱡᱤᱵᱽ-ᱡᱤᱭᱟᱹᱞᱤ ᱟᱨ ᱪᱮᱬᱮ",
+    "description": "गाय, बिल्ली, चिड़िया और हाथी जैसे परिचित जीवों के नाम संथाली में सीखें।",
+    "level": "प्राथमिक कक्षा 1-2",
+    "icon": "🦜",
+    "theme": "amber",
+    "teacher_tip": "जानवरों की आवाज निकालने की गतिविधि कराएं और बच्चों से संथाली नाम बुलवाएं।",
+    "dialogue": [
+      {
+        "speaker": "शिक्षक (Teacher)",
+        "hindi": "पेड़ पर कौन चहक रहा है?",
+        "santhali_olchiki": "ᱫᱟᱨᱮ ᱨᱮ ᱚᱠᱚᱭ ᱨᱟᱜ ᱮᱫᱟ?",
+        "santhali_latin": "Dare re okoy rag eda?"
+      },
+      {
+        "speaker": "विद्यार्थी (Student)",
+        "hindi": "पेड़ पर चिड़िया है!",
+        "santhali_olchiki": "ᱫᱟᱨᱮ ᱨᱮ ᱪᱮᱬᱮ ᱢᱮᱱᱟᱭᱟ!",
+        "santhali_latin": "Dare re cēṛē menaya!"
+      }
+    ],
+    "vocabulary": [
+      {
+        "hindi": "गाय",
+        "olchiki": "ᱜᱟᱹᱭ",
+        "latin": "Gạ̄i",
+        "meaning": "Cow"
+      },
+      {
+        "hindi": "बिल्ली",
+        "olchiki": "ᱯᱩᱥᱤ",
+        "latin": "Pusi",
+        "meaning": "Cat"
+      },
+      {
+        "hindi": "चिड़िया",
+        "olchiki": "ᱪᱮᱬᱮ",
+        "latin": "Cēṛē",
+        "meaning": "Bird"
+      },
+      {
+        "hindi": "मछली",
+        "olchiki": "ᱦᱟᱹᱠᱩ",
+        "latin": "Hạku",
+        "meaning": "Fish"
+      },
+      {
+        "hindi": "हाथी",
+        "olchiki": "ᱦᱟᱹᱛᱤ",
+        "latin": "Hạti",
+        "meaning": "Elephant"
+      }
+    ]
+  }
+]
